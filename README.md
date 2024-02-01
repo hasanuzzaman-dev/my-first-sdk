@@ -2,7 +2,7 @@
 
 This repository contains handlers for interacting with different APIs.
 
-## DingConnectApiHandler
+## Ding Connect ApiHandler
 
 Handles API requests for the Ding Connect API.
 
@@ -611,3 +611,1006 @@ dingConnectApiHandler.lookupBills(API_KEY, lookupBillsRequest, new ApiResponseCa
     }
 });
 ```
+
+# API Handlers
+
+This repository contains handlers for interacting with different APIs.
+
+## You Got A Gift ApiHandler
+
+Handles API requests for the You Got A Gift API.
+## 1. getCurrencies
+
+This method retrieves currencies from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<CurrencyResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CurrencyResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Make an API call to get currencies
+youGotAGiftApiHandler.getCurrencies(API_KEY, new ApiResponseCallback<CurrencyResponse>() {
+    @Override
+    public void onSuccess(CurrencyResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## 2. getAccount
+
+This method retrieves account information from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<AccountResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `AccountResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Make an API call to get account information
+youGotAGiftApiHandler.getAccount(API_KEY, new ApiResponseCallback<AccountResponse>() {
+    @Override
+    public void onSuccess(AccountResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## 3. searchOrderByGiftCode
+
+This method searches for an order by gift code from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `code`: The gift code used to search for the order.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Gift code to search for
+String code = "1234";
+
+// Make an API call to search for an order by gift code
+youGotAGiftApiHandler.searchOrderByGiftCode(API_KEY, code, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## searchOrderByOrderId
+
+This method searches for an order by order ID from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `orderId`: The order ID used to search for the order.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Order ID to search for
+String orderId = "12345";
+
+// Make an API call to search for an order by order ID
+youGotAGiftApiHandler.searchOrderByOrderId(API_KEY, orderId, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## listAllDigitalOrders
+
+This method retrieves a list of all digital orders from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `notify`: A boolean value indicating whether to notify about the orders.
+- `fromDate`: The start date for filtering orders.
+- `toDate`: The end date for filtering orders.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+boolean notify = true;
+String fromDate = "2024-01-01";
+String toDate = "2024-02-01";
+
+// Make an API call to retrieve all digital orders
+youGotAGiftApiHandler.listAllDigitalOrders(apiKey, notify, fromDate, toDate, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## listOrdersPlacedInCountry
+
+This method retrieves a list of orders placed in a specific country from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `country`: The ISO code of the country for which to retrieve orders.
+- `fromDate`: The start date for filtering orders.
+- `toDate`: The end date for filtering orders.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String country = "US";
+String fromDate = "2024-01-01";
+String toDate = "2024-02-01";
+
+// Make an API call to retrieve orders placed in a specific country
+youGotAGiftApiHandler.listOrdersPlacedInCountry(apiKey, country, fromDate, toDate, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## listOrdersPlacedInBrand
+
+This method retrieves a list of orders placed for a specific brand from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `brandCode`: The code of the brand for which to retrieve orders.
+- `fromDate`: The start date for filtering orders.
+- `toDate`: The end date for filtering orders.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String brandCode = "BRAND_CODE";
+String fromDate = "2024-01-01";
+String toDate = "2024-02-01";
+
+// Make an API call to retrieve orders placed for a specific brand
+youGotAGiftApiHandler.listOrdersPlacedInBrand(apiKey, brandCode, fromDate, toDate, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## listOrdersByPage
+
+This method retrieves a list of orders by page from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `page`: The page number of the orders to retrieve.
+- `fromDate`: The start date for filtering orders.
+- `toDate`: The end date for filtering orders.
+- `callback`: An instance of `ApiResponseCallback<OrderResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+int page = 1; // Example page number
+String fromDate = "2024-01-01";
+String toDate = "2024-02-01";
+
+// Make an API call to retrieve orders by page
+youGotAGiftApiHandler.listOrdersByPage(apiKey, page, fromDate, toDate, new ApiResponseCallback<OrderResponse>() {
+    @Override
+    public void onSuccess(OrderResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getAllBrands
+
+This method retrieves a list of all brands from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve all brands
+youGotAGiftApiHandler.getAllBrands(apiKey, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandsByCountry
+
+This method retrieves a list of brands based on the specified country from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `country`: The ISO code of the country for which to retrieve brands.
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String country = "COUNTRY_ISO_CODE";
+
+// Make an API call to retrieve brands by country
+youGotAGiftApiHandler.getBrandsByCountry(apiKey, country, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandByCode
+
+This method retrieves a brand based on the specified brand code from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `brandCode`: The code of the brand to retrieve.
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String brandCode = "BRAND_CODE";
+
+// Make an API call to retrieve a brand by code
+youGotAGiftApiHandler.getBrandByCode(apiKey, brandCode, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandByName
+
+This method retrieves a brand based on the specified name from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `name`: The name of the brand to retrieve.
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String name = "BRAND_NAME";
+
+// Make an API call to retrieve a brand by name
+youGotAGiftApiHandler.getBrandByName(apiKey, name, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getActiveBrands
+
+This method retrieves a list of active brands from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `isActive`: A boolean indicating whether to retrieve active brands (`true`) or inactive brands (`false`).
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+boolean isActive = true;
+
+// Make an API call to retrieve active brands
+youGotAGiftApiHandler.getActiveBrands(apiKey, isActive, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandsByCategoryId
+
+This method retrieves a list of brands associated with a specific category ID from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `categoryId`: The ID of the category for which to retrieve brands.
+- `callback`: An instance of `ApiResponseCallback<BrandResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+int categoryId = 123; // Replace with the desired category ID
+
+// Make an API call to retrieve brands by category ID
+youGotAGiftApiHandler.getBrandsByCategoryId(apiKey, categoryId, new ApiResponseCallback<BrandResponse>() {
+    @Override
+    public void onSuccess(BrandResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandLocations
+
+This method retrieves locations associated with a specific brand code from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `brandCode`: The code of the brand for which to retrieve locations.
+- `callback`: An instance of `ApiResponseCallback<BrandLocationResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandLocationResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String brandCode = "BRAND_CODE"; // Replace with the desired brand code
+
+// Make an API call to retrieve brand locations
+youGotAGiftApiHandler.getBrandLocations(apiKey, brandCode, new ApiResponseCallback<BrandLocationResponse>() {
+    @Override
+    public void onSuccess(BrandLocationResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getLocationByCityId
+
+This method retrieves location details associated with a specific city ID and brand code from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `brandCode`: The code of the brand for which to retrieve location details.
+- `cityId`: The ID of the city for which to retrieve location details.
+- `callback`: An instance of `ApiResponseCallback<BrandLocationCityResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `BrandLocationCityResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String brandCode = "BRAND_CODE"; // Replace with the desired brand code
+String cityId = "CITY_ID"; // Replace with the desired city ID
+
+// Make an API call to retrieve location details by city ID
+youGotAGiftApiHandler.getLocationByCityId(apiKey, brandCode, cityId, new ApiResponseCallback<BrandLocationCityResponse>() {
+    @Override
+    public void onSuccess(BrandLocationCityResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getCategories
+
+This method retrieves categories from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<CategoryResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CategoryResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve categories
+youGotAGiftApiHandler.getCategories(apiKey, new ApiResponseCallback<CategoryResponse>() {
+    @Override
+    public void onSuccess(CategoryResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getCountries
+
+This method retrieves countries from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<CountryResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CountryResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve countries
+youGotAGiftApiHandler.getCountries(apiKey, new ApiResponseCallback<CountryResponse>() {
+    @Override
+    public void onSuccess(CountryResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getCurrencyExchangeRates
+
+This method retrieves currency exchange rates from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<ExchangeRateResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `ExchangeRateResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve currency exchange rates
+youGotAGiftApiHandler.getCurrencyExchangeRates(apiKey, new ApiResponseCallback<ExchangeRateResponse>() {
+    @Override
+    public void onSuccess(ExchangeRateResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getCredentials
+
+This method retrieves credentials from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<CredentialsResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CredentialsResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve credentials
+youGotAGiftApiHandler.getCredentials(apiKey, new ApiResponseCallback<CredentialsResponse>() {
+    @Override
+    public void onSuccess(CredentialsResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## generateCredentials
+
+This method generates credentials from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<CredentialsGenerationResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CredentialsGenerationResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to generate credentials
+youGotAGiftApiHandler.generateCredentials(apiKey, new ApiResponseCallback<CredentialsGenerationResponse>() {
+    @Override
+    public void onSuccess(CredentialsGenerationResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## getBrandWebhooks
+
+This method retrieves webhooks associated with a brand from the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `callback`: An instance of `ApiResponseCallback<WebhooksResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `WebhooksResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+
+// Make an API call to retrieve brand webhooks
+youGotAGiftApiHandler.getBrandWebhooks(apiKey, new ApiResponseCallback<WebhooksResponse>() {
+    @Override
+    public void onSuccess(WebhooksResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## activateWebhook
+
+This method activates a webhook with a specific ID in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `webhookId`: The ID of the webhook to be activated.
+- `callback`: An instance of `ApiResponseCallback<WebhooksActivationResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `WebhooksActivationResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String webhookId = "WEBHOOK_ID";
+
+// Make an API call to activate the webhook
+youGotAGiftApiHandler.activateWebhook(apiKey, webhookId, new ApiResponseCallback<WebhooksActivationResponse>() {
+    @Override
+    public void onSuccess(WebhooksActivationResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## deactivateWebhook
+
+This method deactivates a webhook with a specific ID in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `webhookId`: The ID of the webhook to be deactivated.
+- `callback`: An instance of `ApiResponseCallback<WebhooksDeactivationResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `WebhooksDeactivationResponse` object.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Initialize the YouGotAGiftApiHandler
+YouGotAGiftApiHandler youGotAGiftApiHandler = new YouGotAGiftApiHandler();
+
+// Set parameters
+String apiKey = "YOUR_API_KEY";
+String webhookId = "WEBHOOK_ID";
+
+// Make an API call to deactivate the webhook
+youGotAGiftApiHandler.deactivateWebhook(apiKey, webhookId, new ApiResponseCallback<WebhooksDeactivationResponse>() {
+    @Override
+    public void onSuccess(WebhooksDeactivationResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## createOrder
+
+This method creates a new order in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `request`: An instance of `OrderCreateRequest` containing the details of the order to be created.
+- `callback`: An instance of `ApiResponseCallback<OrderCreateResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving an `OrderCreateResponse` object containing information about the created order.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+```java
+// Create an instance of OrderCreateRequest and set its properties
+OrderCreateRequest orderRequest = new OrderCreateRequest();
+orderRequest.setReferenceId("124DSF");
+orderRequest.setNotify(1);
+orderRequest.setBrandCode("184726");
+orderRequest.setCurrency("AED");
+orderRequest.setAmount(200);
+orderRequest.setCountry("AE");
+orderRequest.setReceiverName("Jhon");
+orderRequest.setReceiverEmail("jhon@example.com");
+orderRequest.setReceiverPhone("0551111111");
+orderRequest.setMessage("Well Done!,\nI thought you would like this gift!");
+Map<String, String> extraFields = new HashMap<>();
+extraFields.put("department", "Information Technology");
+extraFields.put("custuomer_id", "A1232");
+extraFields.put("pi_12", "12Ag");
+orderRequest.setExtraFields(extraFields);
+orderRequest.setDeliveryLanguage("en");
+
+// Make API call to create the order
+youGotAGiftApiHandler.createOrder(API_KEY, orderRequest, new ApiResponseCallback<OrderCreateResponse>() {
+    @Override
+    public void onSuccess(OrderCreateResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## topupAccount
+
+This method initiates a top-up request to add funds to a user's account in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `request`: An instance of `TopupRequest` containing the details of the top-up request, including the currency, amount, and reference ID.
+- `callback`: An instance of `ApiResponseCallback<TopupResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `TopupResponse` object containing information about the top-up transaction.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+```java
+// Create an instance of TopupRequest and set its properties
+TopupRequest topupRequest = new TopupRequest();
+topupRequest.setCurrency("AED");
+topupRequest.setAmount(1000);
+topupRequest.setReferenceId("12335");
+
+// Make API call to initiate the top-up request
+youGotAGiftApiHandler.topupAccount(API_KEY, topupRequest, new ApiResponseCallback<TopupResponse>() {
+    @Override
+    public void onSuccess(TopupResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## activateCredentials
+
+This method activates the credentials associated with a given API key in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `request`: An instance of `CredentialActivationRequest` containing the API key to be activated.
+- `callback`: An instance of `ApiResponseCallback<CredentialActivationResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `CredentialActivationResponse` object containing information about the activation status.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+```java
+// Create an instance of CredentialActivationRequest and set its apiKey property
+CredentialActivationRequest activationRequest = new CredentialActivationRequest();
+activationRequest.setApiKey("JMWIB0YUDTJSDJAPRW9D");
+
+// Make API call to activate the credentials
+youGotAGiftApiHandler.activateCredentials(API_KEY, activationRequest, new ApiResponseCallback<CredentialActivationResponse>() {
+    @Override
+    public void onSuccess(CredentialActivationResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## createWebhook
+
+This method creates a new webhook in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `request`: An instance of `WebhookCreateRequest` containing the details of the webhook to be created, including the URL where notifications will be sent.
+- `callback`: An instance of `ApiResponseCallback<WebhookCreateResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `WebhookCreateResponse` object containing information about the created webhook, including its URL.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+```java
+// Create an instance of WebhookCreateRequest and set its url property
+WebhookCreateRequest webhookRequest = new WebhookCreateRequest();
+webhookRequest.setUrl("https://yourapp.com/webhooks/brands/<notification_url_1>");
+
+// Make API call to create the webhook
+youGotAGiftApiHandler.createWebhook(API_KEY, webhookRequest, new ApiResponseCallback<WebhookCreateResponse>() {
+    @Override
+    public void onSuccess(WebhookCreateResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+## simulateWebhook
+
+This method simulates a webhook trigger in the YouGotAGift API.
+
+### Parameters
+
+- `apiKey`: The API key required to authenticate the request.
+- `webhookId`: The ID of the webhook to be simulated.
+- `callback`: An instance of `ApiResponseCallback<SimulateWebhookResponse>` to handle the API response. It defines two methods:
+  - `onSuccess`: Called when the API request is successful, receiving a `SimulateWebhookResponse` object containing information about the simulated webhook.
+  - `onError`: Called if there is an error during the API request, receiving an error message.
+
+### Example Usage
+
+```java
+// Make API call to simulate the webhook
+youGotAGiftApiHandler.simulateWebhook(API_KEY, "webhookId", new ApiResponseCallback<SimulateWebhookResponse>() {
+    @Override
+    public void onSuccess(SimulateWebhookResponse result) {
+        // Handle successful response here
+    }
+
+    @Override
+    public void onError(String errorMessage) {
+        // Handle error response here
+    }
+});
+```
+

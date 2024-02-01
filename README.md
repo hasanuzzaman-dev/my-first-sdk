@@ -611,11 +611,6 @@ dingConnectApiHandler.lookupBills(API_KEY, lookupBillsRequest, new ApiResponseCa
     }
 });
 ```
-
-# API Handlers
-
-This repository contains handlers for interacting with different APIs.
-
 ## You Got A Gift ApiHandler
 
 Handles API requests for the You Got A Gift API.
@@ -713,7 +708,7 @@ youGotAGiftApiHandler.searchOrderByGiftCode(API_KEY, code, new ApiResponseCallba
     }
 });
 ```
-## searchOrderByOrderId
+## 4. searchOrderByOrderId
 
 This method searches for an order by order ID from the YouGotAGift API.
 
@@ -747,7 +742,7 @@ youGotAGiftApiHandler.searchOrderByOrderId(API_KEY, orderId, new ApiResponseCall
     }
 });
 ```
-## listAllDigitalOrders
+##  5. listAllDigitalOrders
 
 This method retrieves a list of all digital orders from the YouGotAGift API.
 
@@ -786,7 +781,7 @@ youGotAGiftApiHandler.listAllDigitalOrders(apiKey, notify, fromDate, toDate, new
     }
 });
 ```
-## listOrdersPlacedInCountry
+## 6. listOrdersPlacedInCountry
 
 This method retrieves a list of orders placed in a specific country from the YouGotAGift API.
 
@@ -825,7 +820,7 @@ youGotAGiftApiHandler.listOrdersPlacedInCountry(apiKey, country, fromDate, toDat
     }
 });
 ```
-## listOrdersPlacedInBrand
+## 7. listOrdersPlacedInBrand
 
 This method retrieves a list of orders placed for a specific brand from the YouGotAGift API.
 
@@ -864,7 +859,7 @@ youGotAGiftApiHandler.listOrdersPlacedInBrand(apiKey, brandCode, fromDate, toDat
     }
 });
 ```
-## listOrdersByPage
+## 8. listOrdersByPage
 
 This method retrieves a list of orders by page from the YouGotAGift API.
 

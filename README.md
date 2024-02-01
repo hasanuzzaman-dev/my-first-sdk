@@ -6,7 +6,7 @@ This repository contains handlers for interacting with different APIs.
 
 Handles API requests for the Ding Connect API.
 
-### 1. getCurrencies
+## 1. getCurrencies
 
 Sends a request to retrieve currency information.
 
@@ -36,7 +36,7 @@ dingConnectApiHandler.getCurrencies(API_KEY, new ApiResponseCallback<Currency>()
 });
 
 ```
-### 2. getRegions
+## 2. getRegions
 
 Sends a request to retrieve region information for a given list of country ISO codes.
 
@@ -68,7 +68,7 @@ dingConnectApiHandler.getRegions(API_KEY, countryIsos, new ApiResponseCallback<R
     }
 });
 ```
-###  3. getCountries
+##  3. getCountries
 
 Sends a request to retrieve country information.
 
@@ -97,7 +97,7 @@ dingConnectApiHandler.getCountries(API_KEY, new ApiResponseCallback<Country>() {
     }
 });
 ```
-###  4. getProviders
+##  4. getProviders
 
 Sends a request to retrieve provider information based on the specified parameters.
 
@@ -134,7 +134,7 @@ dingConnectApiHandler.getProviders(providerCodes, countryIsos, regionCodes, acco
     }
 });
 ```
-###  5. getProviderStatus
+##  5. getProviderStatus
 
 Sends a request to retrieve the status of providers based on the specified provider codes.
 
@@ -165,7 +165,7 @@ dingConnectApiHandler.getProviderStatus(providerCodes, API_KEY, new ApiResponseC
     }
 });
 ```
-###  6. getProducts
+##  6. getProducts
 
 Sends a request to retrieve product information based on the specified parameters.
 
@@ -206,7 +206,7 @@ dingConnectApiHandler.getProducts(countryIsos, providerCodes, skuCodes, benefits
     }
 });
 ```
-###  7. getProductDescriptions
+##  7. getProductDescriptions
 
 Sends a request to retrieve product descriptions based on the specified parameters.
 
@@ -239,7 +239,7 @@ dingConnectApiHandler.getProductDescriptions(languageCodes, skuCodes, API_KEY, n
     }
 });
 ```
-###  8. getAccountLookup
+##  8. getAccountLookup
 
 Sends a request to retrieve account lookup information based on the specified parameters.
 
@@ -270,7 +270,7 @@ dingConnectApiHandler.getAccountLookup(accountNumber, API_KEY, new ApiResponseCa
     }
 });
 ```
-###  9. getErrorCodeDescriptions
+##  9. getErrorCodeDescriptions
 
 Sends a request to retrieve descriptions for error codes.
 
